@@ -68,7 +68,6 @@ FROM Students
 GROUP BY city
 HAVING COUNT(*) > 2;
 
-
 /*==================================AGGREGATE FUNCTION==================================*/	
 
 -- MAX

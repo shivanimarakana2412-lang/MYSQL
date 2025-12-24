@@ -1,0 +1,47 @@
+USE CONSTRAINTS ;
+
+CREATE TABLE DEPARTMENT (
+DEPT_ID INT PRIMARY KEY ,
+DEPT_NAME VARCHAR(100)
+);
+
+
+INSERT INTO DEPARTMENT 
+VALUES
+( 1 , 'HR') , 
+( 2 , 'SALES') ,
+( 3 , 'WEB') ,
+( 4 , 'APP') ,
+( 5 , 'CASH') ;
+
+
+DROP TABLE EMPLOYEES ;
+
+CREATE TABLE EMPLOYEES(
+EMP_ID INT PRIMARY KEY ,
+EMP_NAME VARCHAR (100) ,
+DEPARTMENT_ID INT ,
+SALARY DECIMAL(10 , 2) ,
+FOREIGN KEY (DEPARTMENT_ID) REFERENCES DEPARTMENT (DEPT_ID) 
+ON DELETE SET NULL
+);
+
+
+INSERT INTO EMPLOYEES VALUES
+
+(1, 'Amit Sharma', 1 , 55000.00),
+(2, 'Neha Verma', 2 , 29000.50),
+(3, 'Rohit Mehta', 3 , 68000.00),
+(4, 'Pooja Patel', 4 , 60000.75),
+(5, 'Arjun Singh', 5 , 82000.00),
+(6, 'Kavita Rao', 1 , 58000.00),
+(7, 'Suresh Nair', 2 , 75000.25),
+(8, 'Meenal Shah', 3 , 90000.00),
+(9, 'Vikas Yadav', 4 , 64000.00),
+(10, 'Rina Joshi', 5 , 30000.00),
+(11 , 'SHIVI' , 1 , NULL) ;
+DELETE FROM department WHERE dept_id = 2 ;
+SELECT * FROM EMPLOYEES ;
+
+SELECT * FROM DEPARTMENT ;
+
