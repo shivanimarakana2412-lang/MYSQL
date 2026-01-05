@@ -1,0 +1,90 @@
+Tables (for understanding)
+
+Students(student_id, name, age, city, dept_id, marks)
+
+Departments(dept_id, dept_name)
+
+Courses(course_id, course_name, dept_id)
+
+Enrollments(enroll_id, student_id, course_id)
+
+Teachers(teacher_id, name, dept_id)
+
+🔹 Basic SELECT
+
+1 Show all students.
+
+2 Show only student name and city.
+
+3 Show students whose age is greater than 18.
+
+4 Show students who live in “Delhi”.
+
+5 Show students with marks greater than or equal to 80.
+
+🔹 Sorting & Limiting
+
+6 Show all students sorted by marks (highest first).
+
+7 Show top 5 students by marks.
+
+8 Show students sorted by name (A → Z).
+
+🔹 Filtering (WHERE with AND/OR)
+
+9 Show students who are older than 18 and have marks above 75.
+
+10 Show students who live in “Delhi” or “Mumbai”.
+
+11 Show students whose name starts with “A”.
+
+12 Show students whose marks are between 60 and 90.
+
+🔹 Aggregates (COUNT, AVG, MAX, MIN, SUM)
+
+13 Count how many students are in the table.
+
+14 Find the average marks of all students.
+
+15 Find the highest marks.
+
+16 Show total students from each city (GROUP BY city).
+
+🔹 JOINS
+
+17 Show each student with their department name
+(Students + Departments).
+
+18 Show each course with its department name
+(Courses + Departments).
+
+19 Show students enrolled in courses
+(Students + Enrollments + Courses).
+
+20 Show teachers with the departments they belong to.
+
+21 Show students and their courses, only for “Computer Science” department.
+
+🔹 More JOIN practice
+
+22 Show students who do not have a department (LEFT JOIN).
+
+23 Show departments that have no students.
+
+24 Show how many students are in each department
+(JOIN + GROUP BY).
+
+🔹 Basic Sub-Queries
+
+25 Show students whose marks are higher than the average marks.
+
+26 Show students who have the highest marks in the table.
+
+27 Show students who belong to the same department as a student named ‘Ravi’.
+
+28 Show courses that have at least one student enrolled
+(sub-query on Enrollments).
+
+29 Show students who are enrolled in more than one course.
+
+30 Show departments where average marks of students are above 75.
