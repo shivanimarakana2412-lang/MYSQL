@@ -1,0 +1,346 @@
+1. What is SQL?
+
+SQL (Structured Query Language) is a language used to communicate with databases. It allows you to store, fetch, update, and delete data. SQL is used to manage relational databases efficiently.
+
+2. What is a database?
+
+A database is an organized collection of data stored in tables. It allows easy storage, retrieval, and management of large amounts of structured information.
+
+3. What is a table?
+
+A table is a collection of rows and columns in a database that stores data about a particular entity, like employees or products. Each row is a record, and each column is a field.
+
+4. What is a row?
+
+A row is a single record in a table, representing one entity’s data. For example, one employee’s information is one row in the employee table.
+
+5. What is a column?
+
+A column is a field in a table that stores one type of information for all rows, like name, salary, or department.
+
+6. What is a primary key?
+
+A primary key is a column that uniquely identifies each row in a table. It cannot have duplicate or NULL values and ensures each record is unique.
+
+7. What is a foreign key?
+
+A foreign key is a column in one table that refers to the primary key of another table. It creates a relationship between tables, ensuring data consistency.
+
+8. What is NULL?
+
+NULL represents missing or unknown data. It is different from zero or empty string and is used when the value is undefined.
+
+9. NULL vs 0
+
+NULL means no value exists, while 0 is a numeric value. NULL indicates absence of data, whereas 0 is a valid number.
+
+10. What is a constraint?
+
+A constraint is a rule applied to a table column to enforce data integrity, such as PRIMARY KEY, FOREIGN KEY, UNIQUE, or NOT NULL.
+
+11. What is SELECT?
+
+SELECT is used to fetch data from a table. It allows you to choose specific columns, filter rows, sort data, and combine data from multiple tables.
+
+12. What is WHERE?
+
+WHERE is used to filter rows based on a condition. Only rows that satisfy the condition are returned in the result set.
+
+13. WHERE vs HAVING
+
+WHERE filters rows before aggregation, while HAVING filters grouped data after aggregation using GROUP BY.
+
+14. What is DISTINCT?
+
+DISTINCT removes duplicate rows from the result set, giving only unique values for the selected columns.
+
+15. What is LIKE?
+
+LIKE is used for pattern matching in SQL. It allows searching for partial matches using wildcards like % (any characters) and _ (single character).
+
+16. What are wildcards?
+
+Wildcards are symbols used in pattern matching. % matches zero or more characters, and _ matches exactly one character.
+
+17. What is BETWEEN?
+
+BETWEEN filters rows within a specific range, including the boundary values. For example, salary BETWEEN 30000 AND 50000.
+
+18. What is IN?
+
+IN checks whether a column’s value matches any value in a list. It is a concise alternative to multiple OR conditions.
+
+19. What is ORDER BY?
+
+ORDER BY sorts the result set by one or more columns in ascending (ASC) or descending (DESC) order.
+
+20. What is LIMIT?
+
+LIMIT restricts the number of rows returned by a query. It is useful for showing only top N records.
+
+21. COUNT()
+
+COUNT() returns the number of rows that match a condition. COUNT(*) counts all rows, while COUNT(column) counts only non-NULL values.
+
+22. SUM()
+
+SUM() adds up numeric values in a column. For example, total salary in a department can be calculated using SUM(salary).
+
+23. AVG()
+
+AVG() calculates the average of numeric values in a column. It is useful for finding mean salary, price, etc.
+
+24. MIN() / MAX()
+
+MIN() returns the smallest value and MAX() returns the largest value in a column.
+
+25. GROUP BY
+
+GROUP BY groups rows that have the same values in specified columns, allowing aggregate functions like COUNT, SUM, and AVG to be applied per group.
+
+26. HAVING
+
+HAVING filters groups after aggregation. It is used with GROUP BY to select only those groups meeting a condition.
+
+27. INNER JOIN
+
+INNER JOIN returns only the rows where there is a match in both tables. It is used to combine related data.
+
+28. LEFT JOIN
+
+LEFT JOIN returns all rows from the left table and matching rows from the right table. If no match exists, NULL is returned for right table columns.
+
+29. RIGHT JOIN
+
+RIGHT JOIN returns all rows from the right table and matching rows from the left table. If no match exists, NULL is returned for left table columns.
+
+30. FULL JOIN
+
+FULL JOIN returns all rows from both tables. Non-matching rows have NULLs in the missing columns.
+
+31. SELF JOIN
+
+A self join is when a table is joined with itself. It is useful for hierarchical data, like employee-manager relationships.
+
+32. When to use SELF JOIN
+
+Use self join to compare rows in the same table, e.g., to find each employee and their manager from the employee table.
+
+33. What is a subquery?
+
+A subquery is a query inside another query. It is used to compute values or filter results dynamically.
+
+34. Subquery vs JOIN
+
+Subquery is a nested query returning values; JOIN combines data from two or more tables.
+
+35. Correlated subquery
+
+A correlated subquery depends on the outer query, running once for each row of the outer query.
+
+36. INSERT
+
+INSERT adds new rows to a table. For example, INSERT INTO employee(name, department) VALUES('Sumit','HR');
+
+37. UPDATE
+
+UPDATE modifies existing data in a table. For example, UPDATE employee SET department='Sales' WHERE id=2;
+
+38. DELETE
+
+DELETE removes rows from a table based on a condition. For example, DELETE FROM employee WHERE id=5;
+
+39. DELETE vs TRUNCATE
+
+DELETE removes rows one by one and can be rolled back; TRUNCATE removes all rows fast and cannot be rolled back.
+
+40. TRUNCATE vs DROP
+
+TRUNCATE deletes all data but keeps the table; DROP deletes the table and its structure permanently.
+
+41. What is a view?
+
+A view is a virtual table created by saving a SELECT query in the database. It behaves like a table, so you can query it directly. Views are often used to simplify complex queries or hide sensitive columns.
+
+42. Why use a view?
+
+Views are used to simplify complex queries, provide a layer of security by hiding certain columns, and make querying easier for repeated use.
+
+43. Can we update a view?
+
+Most views are read-only, but simple views on a single table can be updated. Complex views with joins or aggregations usually cannot be updated.
+
+44. View vs Table
+
+A table stores real data; a view stores only a query definition. Tables occupy storage, while views do not store data themselves.
+
+45. View vs Temporary Table
+
+A view is permanent and stores a saved query; a temporary table stores data temporarily and is deleted after the session ends.
+
+46. What is an index?
+
+An index is a database object that speeds up data retrieval. It is like a book index, helping you find rows faster.
+
+47. Why use an index?
+
+Indexes improve SELECT query performance, especially on large tables, by reducing the number of rows the database needs to scan.
+
+48. Disadvantages of index
+
+Indexes consume extra storage and can slow down INSERT, UPDATE, and DELETE operations because the index must also be updated.
+
+49. On which columns should we create index?
+
+Create indexes on columns that are frequently searched, used in JOIN conditions, or used in ORDER BY and WHERE clauses.
+
+50. How to handle NULL values?
+
+Use functions like COALESCE or IFNULL to replace NULL with a default value. Also, handle NULLs carefully in conditions to avoid errors.
+
+51. What is COALESCE()?
+
+COALESCE() returns the first non-NULL value in its argument list. It is used to replace NULL with meaningful default values.
+
+52. What is IFNULL()?
+
+IFNULL() replaces NULL with a specified value. For example, IFNULL(salary,0) will return 0 if salary is NULL.
+
+53. IS NULL vs = NULL
+
+To check for NULL values, always use IS NULL or IS NOT NULL. Using = with NULL does not work.
+
+54. Find second highest salary
+
+Use a subquery:
+SELECT MAX(salary) FROM employee WHERE salary < (SELECT MAX(salary) FROM employee);
+This returns the second highest salary from the employee table.
+
+55. Find duplicate records
+
+Use GROUP BY and HAVING:
+SELECT name, COUNT(*) FROM employee GROUP BY name HAVING COUNT(*)>1;
+This identifies duplicate rows based on the name column.
+
+56. Find employees without manager
+
+Use NULL check:
+SELECT * FROM employee WHERE manager_id IS NULL;
+This returns employees at the top of the hierarchy.
+
+57. Department-wise count
+
+SELECT department, COUNT(*) FROM employee GROUP BY department;
+This counts how many employees are in each department.
+
+58. Max salary per department
+
+SELECT department, MAX(salary) FROM employee GROUP BY department;
+This finds the highest salary in each department.
+
+59. Employee–manager self join
+
+SELECT e.name, m.name AS manager FROM employee e JOIN employee m ON e.manager_id = m.id;
+This retrieves each employee with their manager.
+
+60. Delete duplicate records
+
+DELETE e1 FROM employee e1 JOIN employee e2 ON e1.name=e2.name AND e1.id>e2.id;
+This deletes duplicates while keeping one row.
+
+61. Top N records
+
+SELECT * FROM employee ORDER BY salary DESC LIMIT 5;
+This returns the top 5 highest-paid employees.
+
+62. Records present in one table but not in another
+
+SELECT * FROM table1 t1 LEFT JOIN table2 t2 ON t1.id=t2.id WHERE t2.id IS NULL;
+This finds rows in table1 that do not exist in table2.
+
+63. Total salary per department
+
+SELECT department, SUM(salary) FROM employee GROUP BY department;
+This sums salaries for each department.
+
+64. Employees earning more than average
+
+SELECT * FROM employee WHERE salary > (SELECT AVG(salary) FROM employee);
+This selects employees with above-average salary.
+
+65. Departments with more than 5 employees
+
+SELECT department, COUNT(*) FROM employee GROUP BY department HAVING COUNT(*)>5;
+This identifies large departments.
+
+66. What is normalization?
+
+Normalization is the process of organizing data to reduce redundancy and improve data integrity by dividing data into related tables.
+
+67. What is denormalization?
+
+Denormalization combines tables to improve query performance, even if it introduces some redundancy.
+
+68. 1NF, 2NF, 3NF
+
+1NF → No repeating groups, atomic columns
+2NF → 1NF + every non-key column depends on the whole primary key
+3NF → 2NF + no transitive dependency
+
+69. What is ACID?
+
+ACID stands for Atomicity, Consistency, Isolation, Durability, which are properties to ensure reliable database transactions.
+
+70. What is a transaction?
+
+A transaction is a group of SQL operations executed as a single unit. Either all succeed or all fail.
+
+71. COMMIT vs ROLLBACK
+
+COMMIT saves the changes made by a transaction, while ROLLBACK undoes them.
+
+72. COUNT(*) vs COUNT(column)
+
+COUNT(*) counts all rows including NULLs; COUNT(column) counts only non-NULL values in that column.
+
+73. WHERE vs ON
+
+WHERE filters rows after join; ON specifies join conditions to match rows between tables.
+
+74. UNION vs UNION ALL
+
+UNION removes duplicates; UNION ALL keeps duplicates when combining result sets.
+
+75. EXISTS vs IN
+
+EXISTS checks if a subquery returns any row and is usually faster for large datasets. IN checks if a value matches a set of values returned by a subquery.
+
+76. CHAR vs VARCHAR
+
+CHAR stores fixed-length strings and pads with spaces; VARCHAR stores variable-length strings without padding.
+
+77. DELETE without WHERE
+
+DELETE without WHERE removes all rows from the table.
+
+78. Difference between DELETE, TRUNCATE, DROP
+
+DELETE → removes rows (can rollback)
+TRUNCATE → removes all rows (cannot rollback)
+DROP → deletes table completely
+
+79. What is a stored procedure?
+
+A stored procedure is a saved SQL program in the database that can be executed repeatedly with parameters.
+
+80. What is a trigger?
+
+A trigger is a SQL code that automatically runs when certain events occur, like INSERT, UPDATE, or DELETE.
+
+81. What is a temporary table?
+
+A temporary table stores data temporarily during a session and is automatically deleted after the session ends.
+
+82. What is a materialized view?
+
+A materialized view stores the results of a query physically and can be refreshed periodically. It improves performance for complex queries.
